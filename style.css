@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+  body {
+  background-color: #f5f5f5;
+  color: #333;
+  }
+
+  /* HEADER */
+  header {
+  background-color: #00a99d;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+header h1 {
+  margin-left: 2.5rem; 
+}
+
+  .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  }
+
+  /* SEÇÕES PRINCIPAIS */
+  main {
+  flex: 3;
+  }
+
+  aside {
+  flex: 1;
+  }
+
+  /* FOOTER */
+  footer {
+  background-color: #00a99d;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  }
+
+ /* POST EM DESTAQUE */
+.post-destaque {
+  position: relative;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.texto-destaque {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  padding: 0;
+  border-radius: 0;
+}
+
+.post-destaque::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  pointer-events: none;
+}
+
+
+.post-destaque img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+
+.texto-destaque p:first-child {
+  text-transform: uppercase;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.texto-destaque h2 {
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+/* TÍTULO DA SEÇÃO */
+.posts-recentes .titulo-recentes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.posts-recentes .titulo-recentes h2 {
+  font-size: 22px;
+}
+
+.posts-recentes .titulo-recentes a {
+  text-decoration: none;
+  color: #00a99d;
+  font-weight: bold;
+}
+
+/* LISTA DE POSTS */
+.lista-posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* CARD */
+.card-post {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  flex: 1 1 calc(50% - 10px); /* 2 por linha */
+  max-width: calc(50% - 10px);
+}
+
+.card-post img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-post .categoria {
+  color: #00a99d;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 10px 15px 5px 15px;
+}
+
+.card-post h3 {
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+.card-post p {
+  margin: 5px 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+.card-post .data {
+  margin-bottom: 15px;
+  font-size: 12px;
+  color: #777;
+}
+/* ASIDE (barra lateral) */
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* POSTS POPULARES */
+.posts-populares h2,
+.categorias h2 {
+  font-size: 20px;
+  background-color: #00a99d;
+  color: white;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.posts-populares ul,
+.categorias ul {
+  list-style: none;
+  padding: 0;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.posts-populares li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.posts-populares li img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.posts-populares li p {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.posts-populares li span {
+  font-size: 12px;
+  color: #999;
+}
+
+/* CATEGORIAS */
+.categorias li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+   border-bottom: 1px dotted #ccc;
+  font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+
+/* TELAS PEQUENAS: CELULARES */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  main, aside {
+    flex: 1 1 100%;
+  }
+
+  .lista-posts {
+    flex-direction: column;
+  }
+
+  .card-post {
+    max-width: 100%;
+  }
+
+  .post-destaque img {
+    max-height: 250px;
+  }
+
+  .texto-destaque {
+    font-size: 14px;
+    padding: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .posts-recentes .titulo-recentes {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* TELAS MUITO GRANDES: ULTRAWIDE */
+@media (min-width: 1600px) {
+  .content-wrapper {
+    max-width: 1600px;
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  .card-post img {
+    height: 220px;
+  }
+
+  .card-post h3 {
+    font-size: 20px;
+  }
+
+  .texto-destaque h2 {
+    font-size: 30px;
+  }
+}
